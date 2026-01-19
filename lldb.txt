@@ -1,0 +1,46 @@
+c1. 检查是否有其他调试器附加
+在远程机器上，检查是否有其他调试器已经附加到进程 5710。你可以通过以下命令查看当前的调试会话：
+
+
+
+ps aux | grep lldb
+ps aux | grep debugserver
+
+
+
+
+
+debugserver_azj15 0.0.0.0:1234 -a 红果短剧(hook 的app)
+
+
+
+
+
+Lldb连接:
+
+process connect connect://手机ip:端口
+process connect connect://192.168.123.123.96
+
+process connect connect://localhost:1234
+
+步骤：
+启动 iproxy：将本地端口转发到设备的 SSH 端口。
+bash
+复制
+iproxy 2222 22
+通过 SSH 连接到设备：
+bash
+复制
+ssh root@localhost -p 2222
+默认密码是 alpine。
+
+
+
+
+
+
+
+
+Ls 
+cd /var/jb/usr/bin
+sudo debugserver_azj15
